@@ -53,6 +53,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Empower.Library.RoomTest;
 using Skyline.DataMiner.Automation;
 using Skyline.DataMiner.Core.DataMinerSystem.Automation;
 
@@ -73,6 +74,9 @@ public class Script
 		foreach (var element in allElements) {
 			engine.GenerateInformation("Element Name = " + element.Name);
 		}
+		Random r = new Random();
+		var order = OrderFactory.CreateOrder("Order " + r.Next(10, 1000));
+		order.Dispatch("Jan-Klaas Kesteloot");
 
 	}
 }
